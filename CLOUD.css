@@ -1,0 +1,548 @@
+/* ============================================================
+   SCOUT WEBSITE — style.css
+   ============================================================ */
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+  min-height: 100vh;
+  direction: rtl;
+  color: #e8f5ef;
+  overflow-x: hidden;
+}
+
+/* ── BACKGROUNDS ── */
+body.home-page {
+  background: linear-gradient(160deg, #071c12 0%, #0f3d2e 30%, #1a6649 65%, #6ed3a3 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body.inner-page {
+  background: linear-gradient(160deg, #071c12 0%, #0f3d2e 40%, #1a6649 100%);
+  min-height: 100vh;
+}
+
+/* ============================================================
+   HOME PAGE — HEADER
+   ============================================================ */
+.site-header {
+  text-align: center;
+  padding: 44px 20px 20px;
+  width: 100%;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4a843, #f0c96a);
+  font-size: 30px;
+  box-shadow: 0 0 28px rgba(212, 168, 67, 0.5);
+  margin-bottom: 14px;
+}
+
+.site-title {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  margin-bottom: 6px;
+}
+
+.site-subtitle {
+  font-size: 0.88rem;
+  color: rgba(110, 211, 163, 0.7);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   HOME PAGE — CARDS CONTAINER
+   ============================================================ */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  padding: 30px 20px 50px;
+  width: 100%;
+  flex: 1;
+}
+
+/* ============================================================
+   CIRCULAR CARD
+   ============================================================ */
+.card {
+  display: block;
+  text-decoration: none;
+  position: relative;
+
+  /* Circle size — responsive */
+  width: min(300px, 78vw);
+  height: min(300px, 78vw);
+  border-radius: 50%;
+
+  /* Smooth hover transition */
+  transition: transform 0.4s cubic-bezier(0.22, 0.68, 0, 1.2),
+              box-shadow  0.4s ease;
+
+  /* Subtle outline ring */
+  box-shadow:
+    0 0 0 4px rgba(110, 211, 163, 0.15),
+    0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.card:hover {
+  transform: scale(1.07);
+  box-shadow:
+    0 0 0 5px rgba(110, 211, 163, 0.4),
+    0 0 40px rgba(110, 211, 163, 0.2),
+    0 28px 70px rgba(0, 0, 0, 0.65);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+/* Inner wrapper clips everything to circle */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* IMAGE */
+.card-image-wrap {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card-image {
+ 
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Subtle dark vignette over image */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* LABEL — bottom strip */
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* Fits inside circle at the bottom arc */
+  padding: 22px 12px 28px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.45) 60%, transparent 100%);
+
+  text-align: center;
+  transition: background 0.35s ease;
+}
+
+.card:hover .card-label {
+  background: linear-gradient(to top, rgba(0, 30, 15, 0.90) 0%, rgba(0, 20, 10, 0.55) 60%, transparent 100%);
+}
+
+.card-label-text {
+  display: block;
+  color: #ffffff;
+  font-size: clamp(0.92rem, 3.5vw, 1.1rem);
+  font-weight: 700;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.3px;
+}
+
+/* ============================================================
+   HOME PAGE — FOOTER
+   ============================================================ */
+.site-footer {
+  width: 100%;
+  text-align: center;
+  padding: 0 20px 28px;
+  color: rgba(110, 211, 163, 0.35);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+}
+
+/* ============================================================
+   INNER PAGES — TOP HEADER
+   ============================================================ */
+.inner-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(7, 28, 18, 0.80);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(110, 211, 163, 0.15);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6ed3a3;
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(110, 211, 163, 0.3);
+  background: rgba(110, 211, 163, 0.07);
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.back-btn:hover {
+  background: rgba(110, 211, 163, 0.18);
+  border-color: #6ed3a3;
+  box-shadow: 0 0 18px rgba(110, 211, 163, 0.2);
+  transform: translateX(3px);
+}
+
+.back-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.inner-title {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.inner-header-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  text-align: center;
+}
+
+/* ============================================================
+   INNER PAGES — MAIN CONTENT
+   ============================================================ */
+.inner-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 20px 70px;
+}
+
+/* ── Section card ── */
+.content-section {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(110, 211, 163, 0.12);
+  border-radius: 22px;
+  padding: 28px 24px;
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3), 0 0 24px rgba(110, 211, 163, 0.06);
+}
+
+.section-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(1.1rem, 4vw, 1.35rem);
+  font-weight: 800;
+  color: #6ed3a3;
+  margin-bottom: 12px;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(110, 211, 163, 0.3), transparent);
+  margin-bottom: 16px;
+}
+
+.section-text {
+  font-size: 0.98rem;
+  line-height: 2;
+  color: rgba(232, 245, 239, 0.82);
+}
+
+/* ── Law list ── */
+.law-list {
+  list-style: none;
+  margin-top: 4px;
+}
+
+.law-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(110, 211, 163, 0.07);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(232, 245, 239, 0.80);
+}
+
+.law-item:last-child {
+  border-bottom: none;
+}
+
+.law-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6ed3a3;
+  box-shadow: 0 0 7px rgba(110, 211, 163, 0.55);
+  margin-top: 7px;
+}
+
+/* ── Knots grid ── */
+.knots-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+@media (min-width: 540px) {
+  .knots-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .knots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.knot-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(110, 211, 163, 0.1);
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.knot-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(110, 211, 163, 0.28);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+.knot-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.knot-emoji {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.knot-name {
+  font-size: 0.97rem;
+  font-weight: 800;
+  color: #6ed3a3;
+  margin-bottom: 2px;
+}
+
+.knot-en {
+  font-size: 0.72rem;
+  color: rgba(200, 168, 122, 0.65);
+  letter-spacing: 0.4px;
+}
+
+.knot-desc {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: rgba(220, 240, 230, 0.72);
+  margin-bottom: 12px;
+}
+
+.knot-level {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.4px;
+}
+
+.knot-level.beginner {
+  background: rgba(110, 211, 163, 0.12);
+  border: 1px solid rgba(110, 211, 163, 0.25);
+  color: #6ed3a3;
+}
+
+.knot-level.medium {
+  background: rgba(212, 168, 67, 0.12);
+  border: 1px solid rgba(212, 168, 67, 0.25);
+  color: #d4a843;
+}
+
+/* ── Tip box ── */
+.tip-section {
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.07), rgba(240, 201, 106, 0.04)) !important;
+  border-color: rgba(212, 168, 67, 0.2) !important;
+}
+
+.tip-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.tip-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tip-text {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: rgba(240, 225, 180, 0.82);
+}
+
+.tip-text strong {
+  color: #f0c96a;
+}
+
+/* ── Bottom back link ── */
+.back-link-bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #6ed3a3;
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(110, 211, 163, 0.3);
+  background: rgba(110, 211, 163, 0.07);
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.back-link-bottom:hover {
+  background: rgba(110, 211, 163, 0.18);
+  border-color: #6ed3a3;
+  box-shadow: 0 0 20px rgba(110, 211, 163, 0.2);
+}
+
+/* ============================================================
+   PAGE ENTRANCE ANIMATIONS
+   ============================================================ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.site-header {
+  animation: fadeSlideUp 0.7s cubic-bezier(0.22, 0.68, 0, 1.2) both;
+}
+
+.card:nth-child(1) {
+  animation: fadeSlideUp 0.7s cubic-bezier(0.22, 0.68, 0, 1.2) 0.2s both;
+}
+
+.card:nth-child(2) {
+  animation: fadeSlideUp 0.7s cubic-bezier(0.22, 0.68, 0, 1.2) 0.38s both;
+}
+
+.inner-header {
+  animation: fadeIn 0.5s ease both;
+}
+
+.content-section:nth-child(1) {
+  animation: fadeSlideUp 0.6s ease 0.15s both;
+}
+.content-section:nth-child(2) {
+  animation: fadeSlideUp 0.6s ease 0.28s both;
+}
+.content-section:nth-child(3) {
+  animation: fadeSlideUp 0.6s ease 0.41s both;
+}
+
+.back-link-bottom {
+  animation: fadeSlideUp 0.6s ease 0.5s both;
+}
+
+/* ============================================================
+   TABLET & DESKTOP — home page side-by-side cards
+   ============================================================ */
+@media (min-width: 640px) {
+  .cards-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    padding: 40px 40px 60px;
+  }
+
+  .card {
+    width: min(280px, 38vw);
+    height: min(280px, 38vw);
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    width: 310px;
+    height: 310px;
+  }
+}
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 👈 يمنع القص */
+  object-position: center;
+  display: block;
+  transform: scale(0.9); /* 👈 يكبرها باش تجي في الوسط مليح */
+  transition: transform 0.5s ease; }

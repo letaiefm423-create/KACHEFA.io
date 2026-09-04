@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكشّافة التونسية - Scouts Tunisie</title>
+    <link rel="stylesheet" href="stayle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/TP6-removebg-preview.png" alt="شعار الكشافة">
+                <h2> كشّافتي</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#activities">الأنشطة</a></li>
+                <li><a href="#gallery">معرض الصور</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+                <li><a href="/SON.HTML">اناشيد</a></li>
+                <li><a href="/CLOUD.html">معلومات كشفية</a></li>
+               
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>كشّافتي </h1>
+            <p>رفيقك الرقمي في المسيرة الكشفية...
+ أناشيد، صيحات، معرفة،<br> و تحديات تربوية في تطبيق واحد.
+الموقع من إعداد فرقة صلاح الدين الأيوبي فوج وذرف جهة ڨابس للكشافة التونسية</p>
+<P>
+تأليف و إعداد<br>
+
+ القائد نجيب كستوري<br>
+ مبرمج التطبيق <br>
+ محمد لطيف<br>
+ 
+
+
+</P>
+                  
+        <div class="hero-content">
+            <button class="cta-btn" onclick="playScoutSong()">🎵 شدوا الرحال و هيوا معنا</button>
+        </div>
+        <audio id="scoutSong" src="/أناشيد كشفية  شدو الرحال النسخة الأصلية + الكلمات.mp3"></audio>
+            
+      
+      
+    </section>
+   
+
+
+    <!-- Activities Section -->
+    <section id="activities" class="activities">
+        <div class="container">
+            <h2>الأنشطة والبرامج</h2>
+            <div class="activities-grid">
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="/CARD1.jpeg" alt="🏕️ التخييم">
+                    <h3>🏕️ التخييم</h3>
+                    <p>نتعلم الاعتماد على النفس و نعيش روح المغامرة في أحضان الطبيعة</p>
+                </div>
+                <div class="activity-card" onclick="showActivity('تدريب')">
+                    <img src="/mm111.jpeg" alt="🔥 المهارات الكشفية">
+                    <h3>🔥 المهارات الكشفية</h3>
+                    <p>نكتسب مهارات البقاء و العمل الذكي في كل الظروف</p>
+                </div>
+                <div class="activity-card" onclick="showActivity('أعمال خيرية')">
+                    <img src="/CARD3.jpeg" alt=" 🧭 تنمية القيادة">
+                    <h3> 🎭 الأنشطة الثقافية</h3>
+                    <p>نعبر عن أنفسنا و ننمي الإبداع و الثقافة بروح كشفية</p>
+                </div>
+                
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="/card4.jpeg" alt="🤝 الخدمة المجتمعية">
+                    <h3>🤝 الخدمة المجتمعية</h3>
+                    <p>نخدم الآخرين و نبني مجتمعًا أفضل بروح التطوع</p>
+                </div>
+               
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="/CARD5.jpeg" alt="⚽ الأنشطة الرياضية ">
+                    <h3>⚽ الأنشطة الرياضية</h3>
+                    <p>نقوّي أجسامنا و ننمّي روح الفريق و التحدي</p>
+                </div>
+               
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="/CARD6.jpeg" alt="🧭 تنمية القيادة ">
+                    <h3>🧭 تنمية القيادة</h3>
+                    <p>نتعلم القيادة و المسؤولية و اتخاذ القرار بثقة</p>
+                </div>
+               
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="CARD7.jpeg" alt="🗺️ نشاط الاستكشاف">
+                    <h3>🗺️ نشاط الاستكشاف</h3>
+                    <p>نكتشف، نفكر، و نحلّ المشكلات بروح المغامرة</p>
+                </div>
+               
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="/CARD8.jpeg" alt="🌲 مهارات البقاء في الطبيعة">
+                    <h3>🌲 مهارات البقاء في الطبيعة</h3>
+                    <p>نواجه الطبيعة بذكاء و نحوّل التحديات إلى فرص</p>
+                </div>
+               
+                <div class="activity-card" onclick="showActivity('معسكر صيفي')">
+                    <img src="/CARD9.jpeg" alt="🧗‍♂️ التحدي و المغامرة">
+                    <h3>🧗‍♂️ التحدي و المغامرة</h3>
+                    <p>نتحدى الصعاب و نقوّي إرادتنا بروح الفريق و المغامرة   </p>
+                </div>
+               
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>معرض الصور</h2>
+            <div class="gallery-grid">
+                <img src="/IMAGE1.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE2.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE3.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE4.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE5.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE6.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE7.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE8.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE9.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE10.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE11.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE12.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE13.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE14.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE15.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE16.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE17.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE18.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE19.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE20.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE21.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE22.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE23.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE24.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE25.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE26.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE27.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE28.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE29.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE30.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE31.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE32.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE33.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE34.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE35.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE36.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE37.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE38.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE39.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE40.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE41.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE42.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE43.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE44.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE45.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE46.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE47.jpeg" alt="صورة 1" onclick="openModal(this)">
+                <img src="/IMAGE48.jpeg" alt="صورة 1" onclick="openModal(this)">
+               
+
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Gallery -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+       <style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #ffffff;
+}
+
+.social-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.social-card {
+    background: #000000;
+    padding: 25px;
+    width: 350px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.social-card h1 {
+    color:  #1877f2;
+    margin-bottom: 20px;
+    
+}
+
+/* boutons */
+.social-link {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* couleurs */
+.facebook {
+    background: #1877f2;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.phone {
+    background: #25d366;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+</style>
+
+<div class="social-section">
+    <div class="social-card">
+        <h1>تابعنا</h1>
+
+        <a href="https://www.facebook.com/share/1BNnczofXy/" class="social-link facebook" target="_blank">
+            Facebook - الكشافة التونسية فوج وذرف
+        </a>
+        <a href="https://www.facebook.com/share/1cdai29gJt/" class="social-link facebook" target="_blank">
+            Facebook - فرقة صلاح الدين الأيوبي
+        </a>
+       
+
+       
+
+    </div>
+</div>
+
+    <!-- Footer -->
+  
+
+     <script src="script.js"></script>
+    <script>
+        function playScoutSong() {
+    const audio = document.getElementById('scoutSong');
+
+    if (audio.paused) {
+        audio.play().catch(e => alert('خطأ في تشغيل الصوت'));
+    } else {
+        audio.pause();
+    }
+}
+    </script>
+</body>
+</html>
